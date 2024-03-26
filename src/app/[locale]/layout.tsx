@@ -1,6 +1,6 @@
 import '@/styles/global.css';
 
-export default function LocaleLayout({
+export default function RootLayout({
     children,
     params: { locale }
 }: {

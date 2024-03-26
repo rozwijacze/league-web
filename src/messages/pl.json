@@ -1,4 +1,10 @@
 {
+    "ErrorPage": {
+        "message": "Przepraszamy, ta strona nie istnieje."
+    },
+    "Dashboard": {
+        "greeting": "Dzień dobry świecie!"
+    },
     "Home": {
         "greeting": "Dzień dobry świecie!"
     }

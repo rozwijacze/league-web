@@ -1,4 +1,10 @@
 {
+    "ErrorPage": {
+        "message": "Sorry, this page doesn't exist."
+    },
+    "Dashboard": {
+        "greeting": "Hello world!"
+    },
     "Home": {
         "greeting": "Hello world!"
     }
