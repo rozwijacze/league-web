@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @import './colors.css';
 
@@ -25,4 +25,13 @@ body {
 svg {
     display: flex;
     flex-shrink: 0;
+    color: #00000000;
+}
+
+@layer components {
+    input {
+        /* @apply autofill:shadow-[inset_0_0_0px_1000px_#7b0d1e]; set 'background' colour (black) */
+        @apply autofill:px-2;
+        @apply autofill:text-lg; /* set font size */
+    }
 }

@@ -6,6 +6,10 @@ export const pathnames = {
     '/dashboard': {
         pl: '/panel',
         en: '/dashboard'
+    },
+    '/login': {
+        pl: '/',
+        en: '/'
     }
 } satisfies Pathnames<typeof locales>;
 

@@ -2,10 +2,14 @@
     "ErrorPage": {
         "message": "Przepraszamy, ta strona nie istnieje."
     },
+    "Home": {
+        "login": "Logowanie",
+        "register": "Rejestracja"
+    },
     "Dashboard": {
         "greeting": "Dzień dobry świecie!"
     },
-    "Home": {
-        "greeting": "Dzień dobry świecie!"
+    "LoginForm": {
+        "button": "Zaloguj się"
     }
 }
