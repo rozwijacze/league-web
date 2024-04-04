@@ -1,6 +1,8 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './colors.css';
 
 *,
 *::before,
@@ -16,7 +18,38 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    background: var(--primary-gradient);
+}
+
 svg {
     display: flex;
-    flex-shrink: 0;
+    color: var(--white);
+    width: 32px;
+    height: 32px;
+}
+
+a.active > svg {
+    color: var(--icon-active);
+}
+
+a:hover > svg {
+    color: var(--icon-hover);
+    transition: 0.3s ease-out;
+}
+
+@layer components {
+    input {
+        /* @apply autofill:shadow-[inset_0_0_0px_1000px_#7b0d1e]; set 'background' colour (black) */
+        @apply autofill:px-2;
+        @apply autofill:text-lg; /* set font size */
+    }
+
+    a.active {
+        @apply underline underline-offset-8 decoration-4 decoration-primary-red;
+    }
+
+    .main-nav-link {
+        @apply flex justify-center py-2 px-2 text-center rounded-md text-xs font-medium hover:bg-gray-800;
+    }
 }

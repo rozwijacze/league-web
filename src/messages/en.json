@@ -1,5 +1,17 @@
 {
+    "ErrorPage": {
+        "message": "Sorry, this page doesn't exist."
+    },
     "Home": {
+        "login": "Login",
+        "register": "Register"
+    },
+    "Dashboard": {
         "greeting": "Hello world!"
+    },
+    "LoginForm": {
+        "emailPlaceholder": "E-mail",
+        "passwordPlaceholder": "Password",
+        "button": "Login"
     }
 }
