@@ -10,6 +10,26 @@ export const pathnames = {
     '/login': {
         pl: '/',
         en: '/'
+    },
+    '/register': {
+        pl: '/rejestracja',
+        en: '/register'
+    },
+    '/match': {
+        pl: '/mecz',
+        en: '/match'
+    },
+    '/statistics': {
+        pl: '/statystyki',
+        en: '/statistics'
+    },
+    '/chat': {
+        pl: '/czat',
+        en: '/chat'
+    },
+    '/schedule': {
+        pl: '/harmonogram',
+        en: '/schedule'
     }
 } satisfies Pathnames<typeof locales>;
 

@@ -1,3 +1,6 @@
 :root {
     --primary-gradient: linear-gradient(to bottom, #ad5389, #3c1053);
+    --white: #fff;
+    --icon-active: #ad5389;
+    --icon-hover: #3c1053;
 }
