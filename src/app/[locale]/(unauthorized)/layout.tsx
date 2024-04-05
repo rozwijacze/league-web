@@ -1,4 +1,4 @@
-import NavLink from '@/app/components/NavLink';
+import NavLink from '@/components/NavLink';
 import { useTranslations } from 'next-intl';
 
 type Props = {
