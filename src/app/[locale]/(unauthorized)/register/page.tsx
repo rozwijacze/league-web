@@ -1,32 +1,27 @@
 'use client';
 
+import * as yup from 'yup';
 import Link from 'next/link';
 import { FieldValues, useForm } from 'react-hook-form';
-import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
-// import { useAuthContext } from '@contexts/AuthContext';
+import { useTranslations } from 'next-intl';
+import { register as registerUser } from '@/libs/auth';
 
 export default function RegisterForm() {
+    const t = useTranslations('Auth');
+    const tErrors = useTranslations('Errors');
+    const tSchema = useTranslations('RegisterSchema');
     const [isRegistered, setIsRegistered] = useState(false);
     const [serverError, setServerError] = useState('');
-    // const authContextValues = useAuthContext();
 
     const registerSchema = yup.object().shape({
-        nickname: yup.string().min(3).max(16).required(),
-        name: yup
-            .string()
-            .test('empty-check', 'Name must be at least 2 characters', name =>
-                name ? name.length >= 2 || name.length == 0 : true
-            ),
-        surname: yup
-            .string()
-            .test('empty-check', 'Surname must be at least 3 characters', surname =>
-                surname ? surname.length >= 3 || surname.length == 0 : true
-            ),
-        email: yup.string().max(64).email().required(),
-        password: yup.string().min(7).max(32).required(),
-        repeatPassword: yup.string().oneOf([yup.ref('password')], 'Repeat password')
+        nickname: yup.string().min(3, tSchema('nickShort')).max(16, tSchema('nickLong')),
+        name: yup.string().min(2, tSchema('nameShort')).max(20, tSchema('nameLong')),
+        surname: yup.string().min(3, tSchema('surnameShort')).max(25, tSchema('surnameLong')),
+        email: yup.string().max(64, tSchema('emailLong')),
+        password: yup.string().min(7, tSchema('passwordShort')).max(32, tSchema('passwordLong')),
+        repeatPassword: yup.string().oneOf([yup.ref('password')], tSchema('passwordMismatch'))
     });
 
     const {
@@ -38,33 +33,30 @@ export default function RegisterForm() {
         resolver: yupResolver(registerSchema)
     });
 
-    function onSubmit(data: FieldValues) {
-        console.log(data);
+    async function onSubmit({ nickname, name, surname, email, password }: FieldValues) {
+        resetStatus();
 
-        // resetStatus();
-        // const { nickname, name, surname, email, password } = data;
-
-        // authContextValues.register(nickname, name, surname, email, password).then(response => {
-        //     if (response.success) {
-        //         setIsRegistered(true);
-        //         reset();
-        //     } else {
-        //         setServerError(response.error || labels.register.results.unusualError);
-        //     }
-        // });
+        await registerUser(nickname, name, surname, email, password).then(response => {
+            if (response.success) {
+                setIsRegistered(true);
+                reset();
+            } else {
+                setServerError(response.error || tErrors('connection'));
+            }
+        });
     }
 
-    // function resetStatus() {
-    //     setIsRegistered(false);
-    //     setServerError('');
-    // }
+    function resetStatus() {
+        setIsRegistered(false);
+        setServerError('');
+    }
 
     return (
         <>
-            <form className="space-y-10 text-lg" onSubmit={handleSubmit(onSubmit)}>
+            <form className="space-y-10 text-lg" onSubmit={handleSubmit(onSubmit)} method="POST">
                 <div className="flex flex-col">
-                    <label htmlFor="nickname">Nickname</label>
-                    <p>{errors.nickname?.message}</p>
+                    <label htmlFor="nickname">{t('nickname')}</label>
+                    <p className="text-red-500">{errors.nickname?.message}</p>
                     <input
                         {...register('nickname')}
                         required
@@ -76,8 +68,8 @@ export default function RegisterForm() {
                     />
                 </div>
                 <div className="flex flex-col">
-                    <label htmlFor="name">Name</label>
-                    <p>{errors.name?.message}</p>
+                    <label htmlFor="name">{t('name')}</label>
+                    <p className="text-red-500">{errors.name?.message}</p>
                     <input
                         {...register('name')}
                         type="text"
@@ -89,8 +81,8 @@ export default function RegisterForm() {
                 </div>
 
                 <div className="flex flex-col">
-                    <label htmlFor="surname">Surname</label>
-                    <p>{errors.surname?.message}</p>
+                    <label htmlFor="surname">{t('surname')}</label>
+                    <p className="text-red-500">{errors.surname?.message}</p>
                     <input
                         {...register('surname')}
                         type="text"
@@ -102,8 +94,8 @@ export default function RegisterForm() {
                 </div>
 
                 <div className="flex flex-col">
-                    <label htmlFor="email">E-mail</label>
-                    <p>{errors.email?.message}</p>
+                    <label htmlFor="email">{t('email')}</label>
+                    <p className="text-red-500">{errors.email?.message}</p>
                     <input
                         {...register('email')}
                         required
@@ -116,8 +108,8 @@ export default function RegisterForm() {
                 </div>
 
                 <div className="flex flex-col">
-                    <label htmlFor="password">Password</label>
-                    <p>{errors.password?.message}</p>
+                    <label htmlFor="password">{t('password')}</label>
+                    <p className="text-red-500">{errors.password?.message}</p>
                     <input
                         {...register('password')}
                         required
@@ -130,8 +122,8 @@ export default function RegisterForm() {
                 </div>
 
                 <div className="flex flex-col">
-                    <label htmlFor="repeatPassword">Repeat password</label>
-                    <p>{errors.repeatPassword?.message}</p>
+                    <label htmlFor="repeatPassword">{t('passwordRepeat')}</label>
+                    <p className="text-red-500">{errors.repeatPassword?.message}</p>
                     <input
                         required
                         {...register('repeatPassword')}
@@ -148,19 +140,21 @@ export default function RegisterForm() {
                         className="w-full bg-secondary-brown uppercase font-bold px-2 py-3"
                         type="submit"
                     >
-                        Register
+                        {t('register')}
                     </button>
 
                     <Link
                         href="/"
                         className="w-full bg-secondary-brown uppercase font-bold px-2 py-3 text-center"
                     >
-                        Back
+                        {t('back')}
                     </Link>
                 </div>
             </form>
-            {/* {isRegistered && <p className="register__result register__result--success">{labels.register.results.succeed}</p>}
-            {serverError && <p className="register__result register__result--fail">{serverError}</p>} */}
+            {isRegistered && (
+                <p className="text-green-600 text-center mt-10">{t('registerSuccess')}</p>
+            )}
+            {serverError && <p className="text-red-500 text-center mt-10">{serverError}</p>}
         </>
     );
 }
