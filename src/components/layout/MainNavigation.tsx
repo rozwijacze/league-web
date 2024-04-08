@@ -1,4 +1,4 @@
-import NavLink from '@/components/NavLink';
+import NavLink from '@/components/layout/NavLink';
 import React from 'react';
 import { CiCalendarDate } from 'react-icons/ci';
 import { GiDart } from 'react-icons/gi';
