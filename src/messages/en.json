@@ -1,6 +1,11 @@
 {
-    "ErrorPage": {
-        "message": "Sorry, this page doesn't exist."
+    "Errors": {
+        "404": "Sorry, this page doesn't exist.",
+        "connection": "Error connecting to a server.",
+        "invalidCredentials": "Invalid credentials",
+        "expiredToken": "Token is expired or invalid.",
+        "loginError": "An error occurred while logging in.",
+        "registerError": "An error occured while signing up."
     },
     "Home": {
         "login": "Login",
@@ -9,9 +14,28 @@
     "Dashboard": {
         "greeting": "Hello world!"
     },
-    "LoginForm": {
-        "emailPlaceholder": "E-mail",
-        "passwordPlaceholder": "Password",
-        "button": "Login"
+    "Auth": {
+        "email": "E-mail",
+        "password": "Password",
+        "passwordRepeat": "Repeat password",
+        "nickname": "Nickname",
+        "name": "Name",
+        "surname": "Surname",
+        "login": "Login",
+        "register": "Register",
+        "registerSuccess": "Registration successful!",
+        "back": "Back"
+    },
+    "RegisterSchema": {
+        "nickShort": "Nickname too short (min. 3 characters)",
+        "nickLong": "Nickname too long (max. 16 characters)",
+        "nameShort": "Name too short (min. 2 characters)",
+        "nameLong": "Name too long (max. 20 characters)",
+        "surnameShort": "Surname too short (min. 3 characters)",
+        "surnameLong": "Surname too long (max. 25 characters)",
+        "emailLong": "Email too long (max. 64 characters)",
+        "passwordShort": "Password too short (min. 7 characters)",
+        "passwordLong": "Password too long (max. 32 characters)",
+        "passwordMismatch": "Passwords do not match"
     }
 }

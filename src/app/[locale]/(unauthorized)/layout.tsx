@@ -1,11 +1,13 @@
-import NavLink from '@/components/NavLink';
-import { useTranslations } from 'next-intl';
+import NavLink from '@/components/layout/NavLink';
+import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl';
+import pick from 'lodash/pick';
 
 type Props = {
     children: React.ReactNode;
 };
 
 export default function AuthLayout({ children }: Props) {
+    const messages = useMessages();
     const t = useTranslations('Home');
 
     return (
@@ -15,7 +17,11 @@ export default function AuthLayout({ children }: Props) {
                     <NavLink href="/">{t('login')}</NavLink>
                     <NavLink href="/register">{t('register')}</NavLink>
                 </div>
-                {children}
+                <NextIntlClientProvider
+                    messages={pick(messages, 'Auth', 'Errors', 'RegisterSchema')}
+                >
+                    {children}
+                </NextIntlClientProvider>
             </div>
         </main>
     );

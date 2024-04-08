@@ -1,6 +1,11 @@
 {
-    "ErrorPage": {
-        "message": "Przepraszamy, ta strona nie istnieje."
+    "Errors": {
+        "404": "Przepraszamy, ta strona nie istnieje.",
+        "connection": "Błąd połączenia z serwerem",
+        "invalidCredentials": "Nieprawidłowe dane logowania.",
+        "expiredToken": "Token wygasł lub jest nieprawidłowy.",
+        "loginError": "Wystąpił błąd podczas logowania.",
+        "registerError": "Wystąpił błąd podczas rejestracji."
     },
     "Home": {
         "login": "Logowanie",
@@ -9,7 +14,28 @@
     "Dashboard": {
         "greeting": "Dzień dobry świecie!"
     },
-    "LoginForm": {
-        "button": "Zaloguj się"
+    "Auth": {
+        "email": "E-mail",
+        "password": "Hasło",
+        "passwordRepeat": "Powtórz hasło",
+        "nickname": "Nick",
+        "name": "Imię",
+        "surname": "Nazwisko",
+        "login": "Zaloguj się",
+        "register": "Zarejestruj się",
+        "registerSuccess": "Zarejestrowano pomyślnie!",
+        "back": "Wstecz"
+    },
+    "RegisterSchema": {
+        "nickShort": "Nick za krótki (min. 3 znaki)",
+        "nickLong": "Nick za długi (maks. 16 znaków)",
+        "nameShort": "Imię za krótkie (min. 2 znaki)",
+        "nameLong": "Imię za długie (maks. 20 znaków)",
+        "surnameShort": "Nazwisko za krótkie (min. 3 znaki)",
+        "surnameLong": "Nazwisko za długie (maks. 25 znaków)",
+        "emailLong": "Email za długi (maks. 64 znaki)",
+        "passwordShort": "Hasło za krótkie (min. 7 znaków)",
+        "passwordLong": "Hasło za długie (maks. 32 znaki)",
+        "passwordMismatch": "Hasła różnią się"
     }
 }
