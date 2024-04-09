@@ -37,5 +37,15 @@
         "passwordShort": "Hasło za krótkie (min. 7 znaków)",
         "passwordLong": "Hasło za długie (maks. 32 znaki)",
         "passwordMismatch": "Hasła różnią się"
+    },
+    "LoginForm": {
+        "button": "Zaloguj się"
+    },
+    "Match": {
+        "createNewMatch": "Załóż nową grę",
+        "creatingNewMatch": "Tworzenie nowej gry!",
+        "enterMatchName": "Podaj nazwe nowej gry:",
+        "joinLobby": "Dołącz do poczekalni",
+        "enterLobbyId": "Podaj id poczekalni, do której chciałbyś dołączyć:"
     }
 }

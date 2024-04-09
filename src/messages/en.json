@@ -37,5 +37,17 @@
         "passwordShort": "Password too short (min. 7 characters)",
         "passwordLong": "Password too long (max. 32 characters)",
         "passwordMismatch": "Passwords do not match"
+    },
+    "LoginForm": {
+        "emailPlaceholder": "E-mail",
+        "passwordPlaceholder": "Password",
+        "button": "Login"
+    },
+    "Match": {
+        "createNewMatch": "Create new match",
+        "creatingNewMatch": "Creating new match!",
+        "enterMatchName": "Enter new match name:",
+        "joinLobby": "Join lobby",
+        "enterLobbyId": "Enter lobby id:"
     }
 }

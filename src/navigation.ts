@@ -30,6 +30,10 @@ export const pathnames = {
     '/schedule': {
         pl: '/harmonogram',
         en: '/schedule'
+    },
+    '/match/[lobby-id]': {
+        pl: '/mecz/[lobby-id]',
+        en: '/match/[lobby-id]'
     }
 } satisfies Pathnames<typeof locales>;
 

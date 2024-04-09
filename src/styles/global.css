@@ -46,10 +46,22 @@ a:hover > svg {
     }
 
     a.active {
-        @apply underline underline-offset-8 decoration-4 decoration-primary-red;
+        @apply underline decoration-primary-red decoration-4 underline-offset-8;
     }
 
     .main-nav-link {
-        @apply flex justify-center py-2 px-2 text-center rounded-md text-xs font-medium hover:bg-gray-800;
+        @apply flex justify-center rounded-md px-2 py-2 text-center text-xs font-medium hover:bg-gray-800;
+    }
+
+    .hero-background {
+        @apply absolute h-full w-full rounded-xl bg-black;
+    }
+
+    .hero-image-for-button {
+        @apply text-shadow absolute flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-cover text-3xl font-bold opacity-100 shadow-sm transition-all duration-200 ease-out hover:text-5xl hover:opacity-100 md:opacity-30;
+    }
+
+    .image-button {
+        @apply flex h-2/6 w-full items-center justify-center text-white md:h-2/5 md:w-2/5;
     }
 }
