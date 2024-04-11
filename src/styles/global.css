@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import './colors.css';
 
 *,
@@ -16,6 +16,8 @@ html,
 body {
     height: 100%;
     overflow-x: hidden;
+    font-family: 'Kanit', sans-serif;
+    letter-spacing: 0.5px;
 }
 
 body {
@@ -24,18 +26,9 @@ body {
 
 svg {
     display: flex;
-    color: var(--white);
+    color: white;
     width: 32px;
     height: 32px;
-}
-
-a.active > svg {
-    color: var(--icon-active);
-}
-
-a:hover > svg {
-    color: var(--icon-hover);
-    transition: 0.3s ease-out;
 }
 
 @layer components {
@@ -46,10 +39,26 @@ a:hover > svg {
     }
 
     a.active {
-        @apply underline underline-offset-8 decoration-4 decoration-primary-red;
+        @apply underline decoration-primary-red decoration-4 underline-offset-8;
+    }
+
+    a.active > svg {
+        @apply text-primary-active;
+    }
+
+    a:hover > svg {
+        @apply text-primary-hover transition duration-[0.3s] ease-out;
+    }
+
+    .btn {
+        @apply w-full bg-gray-800 px-2 py-3 font-bold uppercase;
+    }
+
+    .btn:hover {
+        @apply bg-gray-900 text-primary-hover;
     }
 
     .main-nav-link {
-        @apply flex justify-center py-2 px-2 text-center rounded-md text-xs font-medium hover:bg-gray-800;
+        @apply flex justify-center rounded-md px-2 py-2 text-center text-xs font-medium hover:bg-gray-800;
     }
 }

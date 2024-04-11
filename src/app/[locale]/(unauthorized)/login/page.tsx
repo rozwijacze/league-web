@@ -63,10 +63,7 @@ export default function LoginForm() {
                     />
                 </div>
 
-                <button
-                    className="w-full bg-secondary-brown uppercase font-bold px-2 py-3"
-                    type="submit"
-                >
+                <button className="btn" type="submit">
                     {t('login')}
                 </button>
             </form>

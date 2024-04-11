@@ -11,6 +11,8 @@ const config: Config = {
             colors: {
                 'primary-purple': '#9f2042',
                 'primary-red': '#7b0d1e',
+                'primary-hover': '#8c25c4',
+                'primary-active': '#ad5389',
                 'secondary-brown': '#3d1308',
                 'secondary-black': '#211103'
             }
