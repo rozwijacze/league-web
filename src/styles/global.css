@@ -58,7 +58,7 @@ a:hover > svg {
     }
 
     .hero-image-for-button {
-        @apply text-shadow absolute flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-cover text-3xl font-bold opacity-100 shadow-sm transition-all duration-200 ease-out hover:text-5xl hover:opacity-100 md:opacity-30;
+        @apply text-shadow absolute flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-cover text-3xl font-bold opacity-100 shadow-sm transition-all duration-200 ease-out hover:text-4xl hover:opacity-100 md:opacity-30;
     }
 
     .image-button {

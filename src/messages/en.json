@@ -45,7 +45,7 @@
     },
     "Match": {
         "createNewMatch": "Create new match",
-        "creatingNewMatch": "Creating new match!",
+        "creatingNewMatch": "Creating new match",
         "enterMatchName": "Enter new match name:",
         "joinLobby": "Join lobby",
         "enterLobbyId": "Enter lobby id:"

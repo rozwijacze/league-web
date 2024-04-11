@@ -1,6 +1,6 @@
 'use client';
 
-import AppDialog from '@/components/Dialog';
+import ConfirmDialog from '@/components/common/Dialogs/ConfirmDialog';
 import React, { useState } from 'react';
 
 interface JoinLobbyTranslations {
@@ -29,11 +29,10 @@ export default function JoinLobby({ translations }: Props) {
             >
                 {translations.joinLobby}
             </button>
-            <AppDialog
-                title={translations.joinLobby + '!'}
+            <ConfirmDialog
+                title={translations.joinLobby}
                 description={translations.enterLobbyId}
                 isOpen={modalOpen}
-                isInput={true}
                 handleCancelAction={() => setModalOpen(false)}
                 handleConfirmAction={e => joinMatch(e)}
             />
