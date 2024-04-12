@@ -38,11 +38,6 @@
         "passwordLong": "Password too long (max. 32 characters)",
         "passwordMismatch": "Passwords do not match"
     },
-    "LoginForm": {
-        "emailPlaceholder": "E-mail",
-        "passwordPlaceholder": "Password",
-        "button": "Login"
-    },
     "Match": {
         "createNewMatch": "Create new match",
         "creatingNewMatch": "Creating new match",

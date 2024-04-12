@@ -21,7 +21,7 @@ export default function JoinLobby({ translations }: Props) {
     }
 
     return (
-        <div className="image-button relative rounded-xl">
+        <div className="image-button relative">
             <div className="hero-background"></div>
             <button
                 onClick={() => setModalOpen(true)}

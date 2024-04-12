@@ -38,9 +38,6 @@
         "passwordLong": "Hasło za długie (maks. 32 znaki)",
         "passwordMismatch": "Hasła różnią się"
     },
-    "LoginForm": {
-        "button": "Zaloguj się"
-    },
     "Match": {
         "createNewMatch": "Załóż nową grę",
         "creatingNewMatch": "Tworzenie nowej gry",
