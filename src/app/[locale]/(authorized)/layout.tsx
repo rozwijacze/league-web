@@ -5,7 +5,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     return (
         <>
             <MainNavigation />
-            <main>{children}</main>
+            <main className='flex items-center justify-center'>{children}</main>
         </>
     );
 }
