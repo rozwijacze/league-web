@@ -9,6 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@headlessui/react": "^1.7.18",
         "@hookform/resolvers": "^3.3.4",
         "axios": "^1.6.8",
         "jose": "^5.2.4",
