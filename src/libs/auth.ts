@@ -1,7 +1,7 @@
 'use server';
 
 import axios from 'axios';
-import { encrypt } from './helpers';
+import { encrypt } from './serverHelpers';
 import { cookies } from 'next/headers';
 import { getTranslations } from 'next-intl/server';
 
