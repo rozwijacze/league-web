@@ -38,6 +38,10 @@ a:hover > svg {
     transition: 0.3s ease-out;
 }
 
+.rotate-x-axis {
+    transform: rotateX(3.142rad);
+}
+
 @layer components {
     input {
         /* @apply autofill:shadow-[inset_0_0_0px_1000px_#7b0d1e]; set 'background' colour (black) */
