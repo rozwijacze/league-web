@@ -31,14 +31,14 @@ export default function DropDown({ options }: Props) {
                 <MdOutlineKeyboardArrowUp />
             </button>
             <div
-                className={`absolute ${isShown ? '' : 'hidden'} flex items-center flex-col right-0 top-[3.75rem] md:left-0
-                md:px-2 md:top-[4.5rem] z-10 py-1 w-44 rounded-xl bg-gray-700`}
+                className={`absolute ${isShown ? '' : 'hidden'} flex items-center flex-col right-0 top-[4rem] md:left-0
+                md:top-[4.25rem] z-10 w-44 rounded-xl bg-gray-700`}
                 ref={dropDownRef}
             >
                 {options.map(option => (
                     <Link
                         key={option.path}
-                        className="block box-border relative px-4 py-2 hover:bg-gray-600 w-full text-center"
+                        className="block border-none rounded-xl px-4 py-2 hover:bg-gray-600 w-full text-center"
                         href={option.path}
                     >
                         {option.title}
