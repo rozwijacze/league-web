@@ -9,7 +9,7 @@ type Props = {};
 
 export default function MainNavigation({}: Props) {
     return (
-        <nav className="absolute flex px-2 py-1 top-1 left-1 md:top-3 md:left-3 bg-gray-800 text-white rounded-xl">
+        <nav className="flex items-center px-2 py-1 bg-gray-800 rounded-xl">
             <NavLink href="/dashboard" className="main-nav-link">
                 <GoHomeFill />
             </NavLink>
