@@ -1,8 +1,8 @@
 'use client';
 
+import { IsCurrentPath } from '@/libs/ClientHelpers';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
-import { isCurrentPath } from '@/libs/clientHelpers';
 
 interface Props {
     href: string;
@@ -12,7 +12,7 @@ interface Props {
 
 function NavLink({ children, href, className }: Props) {
     return (
-        <Link href={href} className={isCurrentPath(href) ? className + ' active' : className}>
+        <Link href={href} className={IsCurrentPath(href) ? className + ' active' : className}>
             {children}
         </Link>
     );

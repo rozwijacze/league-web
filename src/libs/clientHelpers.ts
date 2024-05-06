@@ -4,7 +4,7 @@ import { LocalePath, PathKey, pathnames } from '@/navigation';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
-export function isCurrentPath(path: string) {
+export function IsCurrentPath(path: string) {
     const currentPath = usePathname();
     const currentLocale = useLocale();
 

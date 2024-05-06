@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss';
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
+import { PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
     content: [
@@ -23,16 +24,16 @@ const config: Config = {
         }
     },
     plugins: [
-        plugin(function ({ matchUtilities, theme }) {
-          matchUtilities(
-            {
-              'text-shadow': (value) => ({
-                textShadow: value,
-              }),
-            },
-            { values: theme('textShadow') }
-          )
-        }),
-      ],
+        plugin(function ({ matchUtilities, theme }: PluginAPI) {
+            matchUtilities(
+                {
+                    'text-shadow': value => ({
+                        textShadow: value
+                    })
+                },
+                { values: theme('textShadow') }
+            );
+        })
+    ]
 };
 export default config;
