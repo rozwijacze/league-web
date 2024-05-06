@@ -1,6 +1,6 @@
 'use client';
 
-import { IsCurrentPath } from '@/libs/ClientHelpers';
+import { IsCurrentPath } from '@/libs/clientHelpers';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
 
