@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './colors.css';
+@import './shadcn.css';
 
 *,
 *::before,
@@ -50,7 +51,7 @@ a:hover > svg {
     }
 
     a.active {
-        @apply underline decoration-primary-red decoration-4 underline-offset-8;
+        @apply decoration-primary-red underline decoration-4 underline-offset-8;
     }
 
     .main-nav-link {
