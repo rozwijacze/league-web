@@ -22,6 +22,13 @@
             "@root/*": ["./*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.config.js"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "jest.config.js",
+        "global.d.ts"
+    ],
     "exclude": ["node_modules"]
 }
