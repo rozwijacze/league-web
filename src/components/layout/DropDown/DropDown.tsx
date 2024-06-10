@@ -23,7 +23,7 @@ export default function DropDown({ options }: Props) {
     return (
         <>
             <button
-                className={`transition-all transform-gpu duration-200 ${isShown ? '' : 'rotate-x-axis'}`}
+                className={`transition-all transform-gpu duration-300 ${isShown ? '' : 'rotate-x-axis'}`}
                 type="button"
                 onClick={() => setIsShown(!isShown)}
                 ref={buttonRef}
@@ -38,7 +38,7 @@ export default function DropDown({ options }: Props) {
                 {options.map(option => (
                     <Link
                         key={option.path}
-                        className="px-4 py-2 hover:bg-gray-600 w-full text-center"
+                        className="px-4 py-2 hover:bg-gray-600 w-full text-center transition-all duration-300"
                         href={option.path}
                     >
                         {option.title}

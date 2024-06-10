@@ -4,13 +4,13 @@ import { Transition, Dialog } from '@headlessui/react';
 import { Fragment, ReactNode, useRef, useState } from 'react';
 import { GiDart } from 'react-icons/gi';
 
-interface DefaultModalProps {
+type Props = {
     title: string;
     description: string;
     isOpen: boolean;
     children?: ReactNode;
     handleCancelAction: () => void;
-}
+};
 
 export default function DefaultDialog({
     title,
@@ -18,7 +18,7 @@ export default function DefaultDialog({
     isOpen,
     children,
     handleCancelAction
-}: DefaultModalProps) {
+}: Props) {
     const cancelButtonRef = useRef(null);
 
     return (
@@ -34,7 +34,7 @@ export default function DefaultDialog({
                     enter="ease-out duration-300"
                     enterFrom="opacity-0"
                     enterTo="opacity-100"
-                    leave="ease-in duration-200"
+                    leave="ease-in duration-300"
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
@@ -48,7 +48,7 @@ export default function DefaultDialog({
                             enter="ease-out duration-300"
                             enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                             enterTo="opacity-100 translate-y-0 sm:scale-100"
-                            leave="ease-in duration-200"
+                            leave="ease-in duration-300"
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
@@ -79,9 +79,7 @@ export default function DefaultDialog({
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    className="bg-gray-800 px-4 pb-4 pt-5 sm:p-6 sm:pb-4"
-                                >
+                                <div className="bg-gray-800 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                                     {children ? children : null}
                                 </div>
                             </Dialog.Panel>

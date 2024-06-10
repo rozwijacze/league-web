@@ -1,20 +1,17 @@
 'use client';
 
-import InputDialog, { InputDialogValues } from '@/components/common/Dialogs/InputDialog';
+import InputDialog, {
+    InputDialogValues
+} from '@/components/common/Dialogs/InputDialog/InputDialog';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-
-interface CreateMatchTranslations {
-    createNewMatch: string;
-    creatingNewMatch: string;
-    enterMatchName: string;
-}
+import en from '@/messages/en.json';
 
 type Props = {
-    translations: CreateMatchTranslations;
+    t: Partial<IntlMessages['Match']>;
 };
 
-export default function CreateMatch({ translations }: Props) {
+export default function CreateMatch({ t }: Props) {
     const [modalOpen, setModalOpen] = useState(false);
 
     const router = useRouter();
@@ -31,11 +28,11 @@ export default function CreateMatch({ translations }: Props) {
                 onClick={() => setModalOpen(true)}
                 className="bg-[url('/images/darts-board.jpg')] hero-image-for-button"
             >
-                {translations.createNewMatch}
+                {t.createNewMatch}
             </button>
             <InputDialog
-                title={translations.creatingNewMatch}
-                description={translations.enterMatchName}
+                title={t.creatingNewMatch || en.Match.creatingNewMatch}
+                description={t.enterMatchName || en.Match.enterMatchName}
                 isOpen={modalOpen}
                 inputs={[
                     { label: 'Match Name', type: 'text', id: 'match-name' },

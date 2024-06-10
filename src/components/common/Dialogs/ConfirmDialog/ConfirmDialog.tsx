@@ -1,15 +1,15 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import DefaultDialog from './DefaultDialog';
+import DefaultDialog from '../DefaultDialog/DefaultDialog';
 
-interface ConfirmModalProps {
+type Props = {
     title: string;
     description: string;
     isOpen: boolean;
     handleCancelAction: () => void;
     handleConfirmAction: (enteredValue: string) => void;
-}
+};
 
 export default function ConfirmDialog({
     title,
@@ -17,7 +17,7 @@ export default function ConfirmDialog({
     isOpen,
     handleCancelAction,
     handleConfirmAction
-}: ConfirmModalProps) {
+}: Props) {
     const [enteredValue, setEnteredValue] = useState('');
 
     const cancelButtonRef = useRef(null);
@@ -32,8 +32,8 @@ export default function ConfirmDialog({
             <div className="bg-gray-800 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white
-                        shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                    className="inline-flex w-full justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold shadow-sm
+                        hover:bg-red-500 sm:ml-3 sm:w-auto"
                     onClick={() => handleConfirmAction(enteredValue)}
                 >
                     Confirm
