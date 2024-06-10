@@ -4,6 +4,12 @@ import { LocalePath, PathKey, pathnames } from '@/navigation';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
+/**
+ * Checks if provided path is the same as current
+ * This method helps with checking main locale paths (pl), which is not included in the url
+ * @param path
+ * @returns {boolean}
+ */
 export function IsCurrentPath(path: string) {
     const currentPath = usePathname();
     const currentLocale = useLocale();
@@ -28,4 +34,14 @@ export function IsCurrentPath(path: string) {
     }
 
     return false;
+}
+
+/**
+ * Search helper function which checks if provided key is in value
+ * @param value
+ * @param key
+ * @returns {boolean}
+ */
+export function valueFoundInKey(value: string, key: string) {
+    return key.toLowerCase().includes(value.toLowerCase());
 }
