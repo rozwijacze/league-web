@@ -11,6 +11,14 @@
         "login": "Logowanie",
         "register": "Rejestracja"
     },
+    "MainNavigation": {
+        "dashboard": "Panel",
+        "leagues": "Ligi",
+        "match": "Mecze",
+        "statistics": "Statystyki",
+        "chat": "Czat",
+        "schedule": "Harmonogram"
+    },
     "Dashboard": {
         "greeting": "Dzień dobry świecie!"
     },
@@ -44,5 +52,41 @@
         "enterMatchName": "Podaj nazwe nowej gry:",
         "joinLobby": "Dołącz do poczekalni",
         "enterLobbyId": "Podaj id poczekalni, do której chciałbyś dołączyć:"
+    },
+    "Leagues": {
+        "publicLeagues": "Publiczne ligi",
+        "privateLeagues": "Prywatne ligi",
+        "createNewLeague": "Stwórz nową ligę"
+    },
+    "LeaguesTable": {
+        "logo": "Logo",
+        "name": "Nazwa",
+        "startDate": "Data startu",
+        "endDate": "Data końca",
+        "owner": "Właściciel",
+        "matches": "Mecze"
+    },
+    "CreateLeague": {
+        "selectLogo": "Wybierz logo",
+        "leagueName": "Nazwa ligi:",
+        "startDate": "Data startu:",
+        "endDate": "Data końca:",
+        "matches": "Liczba meczy (1-100):",
+        "submit": "Utwórz"
+    },
+    "CreateLeagueSchema": {
+        "logoRequired": "Logo jest wymagane",
+        "nameRequired": "Nazwa jest wymagana",
+        "startDateRequired": "Data rozpoczęcia jest wymagana",
+        "endDateRequired": "Data zakończenia jest wymagana",
+        "matchesRequired": "Liczba meczy jest wymagana",
+        "invalidDate": "Nieprawidłowa data",
+        "endDateBeforeStartDate": "Data zakończenia nie może być wcześniejsza niż data rozpoczęcia",
+        "fileSizeError": "Proszę wybrać plik o wielkości poniżej 1MB",
+        "fileFormatError": "Nieobsługiwany format pliku"
+    },
+    "SearchBar": {
+        "placeholder": "Wyszukaj...",
+        "clear": "Wyczyść"
     }
 }

@@ -17,6 +17,7 @@ html,
 body {
     height: 100%;
     overflow-x: hidden;
+    color: var(--white);
 }
 
 body {
@@ -34,11 +35,6 @@ a.active > svg {
     color: var(--icon-active);
 }
 
-a:hover > svg {
-    color: var(--icon-hover);
-    transition: 0.3s ease-out;
-}
-
 .rotate-x-axis {
     transform: rotateX(3.142rad);
 }
@@ -50,12 +46,16 @@ a:hover > svg {
         @apply autofill:text-lg; /* set font size */
     }
 
+    input[type='file'] {
+        @apply hidden;
+    }
+
     a.active {
-        @apply decoration-primary-red underline decoration-4 underline-offset-8;
+        @apply underline decoration-primary-red decoration-4 underline-offset-8;
     }
 
     .main-nav-link {
-        @apply flex justify-center rounded-md px-2 py-2 text-center text-xs font-medium hover:bg-gray-800;
+        @apply flex justify-center rounded-md px-2 py-2 text-center text-xs font-medium transition-all duration-300 hover:bg-gray-600;
     }
 
     .hero-background {
@@ -63,10 +63,26 @@ a:hover > svg {
     }
 
     .hero-image-for-button {
-        @apply text-shadow absolute flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-cover text-3xl font-bold opacity-100 shadow-sm transition-all duration-200 ease-out hover:text-4xl hover:opacity-100 md:opacity-30;
+        @apply absolute flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-cover text-3xl font-bold opacity-100 shadow-sm transition-all duration-300 ease-out text-shadow hover:text-4xl hover:opacity-100 md:opacity-30;
     }
 
     .image-button {
-        @apply flex h-2/6 w-full items-center justify-center text-white md:h-2/5 md:w-2/5;
+        @apply flex h-2/6 w-full items-center justify-center md:h-2/5 md:w-2/5;
+    }
+
+    .leagues-page-nav-button {
+        @apply rounded-xl p-4 font-semibold transition-all duration-300 hover:bg-gray-600;
+    }
+
+    .leagues-page-nav-button.active {
+        @apply bg-gray-800 text-[#ad5389];
+    }
+
+    .search-icon {
+        @apply absolute right-3 top-3 h-[32px] w-[32px];
+    }
+
+    .file-selector {
+        @apply m-auto w-[80%] cursor-pointer bg-secondary-brown px-2 py-3 text-center font-bold uppercase;
     }
 }

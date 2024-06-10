@@ -11,6 +11,14 @@
         "login": "Login",
         "register": "Register"
     },
+    "MainNavigation": {
+        "dashboard": "Dashboard",
+        "leagues": "Leagues",
+        "match": "Match",
+        "statistics": "Statistics",
+        "chat": "Chat",
+        "schedule": "Schedule"
+    },
     "Dashboard": {
         "greeting": "Hello world!"
     },
@@ -44,5 +52,41 @@
         "enterMatchName": "Enter new match name:",
         "joinLobby": "Join lobby",
         "enterLobbyId": "Enter lobby id:"
+    },
+    "Leagues": {
+        "publicLeagues": "Public leagues",
+        "privateLeagues": "Private leagues",
+        "createNewLeague": "Create new league"
+    },
+    "LeaguesTable": {
+        "logo": "Logo",
+        "name": "Name",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "owner": "Owner",
+        "matches": "Matches"
+    },
+    "CreateLeague": {
+        "selectLogo": "Select logo",
+        "leagueName": "League name:",
+        "startDate": "Start date:",
+        "endDate": "End date:",
+        "matches": "Matches (1-100):",
+        "submit": "Create"
+    },
+    "CreateLeagueSchema": {
+        "logoRequired": "Logo is required",
+        "nameRequired": "Name is required",
+        "startDateRequired": "Start date is required",
+        "endDateRequired": "End date is required",
+        "matchesRequired": "Matches is required",
+        "invalidDate": "Invalid date",
+        "endDateBeforeStartDate": "End date cannot be before start date",
+        "fileSizeError": "Please select a file under 1MB",
+        "fileFormatError": "Unsupported file format"
+    },
+    "SearchBar": {
+        "placeholder": "Search...",
+        "clear": "Clear"
     }
 }
