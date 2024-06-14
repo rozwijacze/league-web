@@ -26,10 +26,8 @@ export default function Leagues({}: Props) {
         [LeagueTableView.NEW_LEAGUE]: t('createNewLeague')
     };
 
-    /**
-     * TODO
-     * Extend searching for other attributes not only league name
-     */
+    // TODO
+    // Extend searching for other attributes not only league name
 
     return (
         <div className="w-full h-full flex flex-col">

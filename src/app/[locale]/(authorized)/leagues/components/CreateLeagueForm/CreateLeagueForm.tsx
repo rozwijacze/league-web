@@ -1,14 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslations } from 'next-intl';
-import React, { useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import { SiDart } from 'react-icons/si';
-import Image from 'next/image';
+import CreateLeagueLogoSelection from '../CreateLeagueLogoSelection/CreateLeagueLogoSelection';
 
-type Props = {};
-
-interface IFormInputs {
+export interface IFormInputs {
     logo: FileList;
     name: string;
     startDate: Date;
@@ -16,7 +13,7 @@ interface IFormInputs {
     matches: number;
 }
 
-export default function CreateLeagueForm({}: Props) {
+export default function CreateLeagueForm() {
     const t = useTranslations('CreateLeague');
     const tSchema = useTranslations('CreateLeagueSchema');
     const createLeagueSchema = yup
@@ -43,8 +40,6 @@ export default function CreateLeagueForm({}: Props) {
             matches: yup.number().required(tSchema('matchesRequired')).min(1).max(100)
         })
         .required();
-    const [selectedLogoPreview, setSelectedLogoPreview] = useState<string | null>(null);
-    const [fileSizeError, setFileSizeError] = useState<string | null>(null);
 
     const {
         register,
@@ -55,80 +50,17 @@ export default function CreateLeagueForm({}: Props) {
         resolver: yupResolver(createLeagueSchema)
     });
 
+    // TODO
     // temporary submit handler
     function onSubmit(data: IFormInputs) {
         alert('League created');
         console.log(data);
     }
 
-    function showSelectedImage(e: React.ChangeEvent<HTMLInputElement>) {
-        const file = e.target.files?.[0];
-
-        if (!file) {
-            return;
-        }
-
-        // Show error if img size > 1MB
-        if (file.size > 1000000) {
-            setFileSizeError(tSchema('fileSizeError'));
-            setSelectedLogoPreview(null);
-        } else {
-            const reader = new FileReader();
-
-            reader.readAsDataURL(file);
-            reader.onload = e => {
-                setSelectedLogoPreview(String(e.target?.result));
-                setFileSizeError(null);
-            };
-        }
-    }
-
     return (
         <div className="w-full h-full bg-gray-800 rounded-xl flex justify-center items-center">
             <form className="text-lg flex justify-around w-full" onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex flex-col gap-8">
-                    <div className="w-[300px] h-[400px] flex justify-center items-center text-center">
-                        {errors.logo ? (
-                            <p className="text-red-500">{errors.logo.message}</p>
-                        ) : fileSizeError ? (
-                            <p className="text-red-500">{fileSizeError}</p>
-                        ) : selectedLogoPreview ? (
-                            <Image
-                                src={selectedLogoPreview as string}
-                                className="w-[100%] h-auto"
-                                alt="logo preview"
-                                width={80}
-                                height={80}
-                            />
-                        ) : (
-                            <SiDart className="w-[150px] h-[150px]" />
-                        )}
-                    </div>
-                    <div className="flex flex-col">
-                        <label htmlFor="logo" className="file-selector">
-                            {t('selectLogo')}
-                        </label>
-                        <Controller
-                            name="logo"
-                            control={control}
-                            render={({ field }) => (
-                                <input
-                                    {...register('logo')}
-                                    required
-                                    id="logo"
-                                    name="logo"
-                                    type="file"
-                                    accept=".jpg,.jpeg,.png"
-                                    onChange={e => {
-                                        showSelectedImage(e);
-                                        field.onChange(e.target.files);
-                                    }}
-                                    className="outline-none bg-transparent border-b-2 border-b-slate-200 py-1 px-2 font-bold"
-                                />
-                            )}
-                        />
-                    </div>
-                </div>
+                <CreateLeagueLogoSelection register={register} errors={errors} control={control} />
 
                 <div className="space-y-10">
                     <div className="flex flex-col">
