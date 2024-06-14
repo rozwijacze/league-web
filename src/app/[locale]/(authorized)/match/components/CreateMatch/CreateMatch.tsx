@@ -3,15 +3,12 @@
 import InputDialog, {
     InputDialogValues
 } from '@/components/common/Dialogs/InputDialog/InputDialog';
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import en from '@/messages/en.json';
 
-type Props = {
-    t: Partial<IntlMessages['Match']>;
-};
-
-export default function CreateMatch({ t }: Props) {
+export default function CreateMatch() {
+    const t = useTranslations('Match');
     const [modalOpen, setModalOpen] = useState(false);
 
     const router = useRouter();
@@ -28,11 +25,11 @@ export default function CreateMatch({ t }: Props) {
                 onClick={() => setModalOpen(true)}
                 className="bg-[url('/images/darts-board.jpg')] hero-image-for-button"
             >
-                {t.createNewMatch}
+                {t('createNewMatch')}
             </button>
             <InputDialog
-                title={t.creatingNewMatch || en.Match.creatingNewMatch}
-                description={t.enterMatchName || en.Match.enterMatchName}
+                title={t('createNewMatch')}
+                description={t('enterMatchName')}
                 isOpen={modalOpen}
                 inputs={[
                     { label: 'Match Name', type: 'text', id: 'match-name' },

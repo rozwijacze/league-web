@@ -2,13 +2,10 @@
 
 import ConfirmDialog from '@/components/common/Dialogs/ConfirmDialog/ConfirmDialog';
 import React, { useState } from 'react';
-import en from '@/messages/en.json';
+import { useTranslations } from 'next-intl';
 
-type Props = {
-    t: Partial<IntlMessages['Match']>;
-};
-
-export default function JoinLobby({ t }: Props) {
+export default function JoinLobby() {
+    const t = useTranslations('Match');
     const [modalOpen, setModalOpen] = useState(false);
 
     // TODO: Connecting to lobby by passing id.
@@ -23,11 +20,11 @@ export default function JoinLobby({ t }: Props) {
                 onClick={() => setModalOpen(true)}
                 className="bg-[url('/images/dart-join.jpg')] hero-image-for-button"
             >
-                {t.joinLobby}
+                {t('joinLobby')}
             </button>
             <ConfirmDialog
-                title={t.joinLobby || en.Match.joinLobby}
-                description={t.enterLobbyId || en.Match.enterLobbyId}
+                title={t('joinLobby')}
+                description={t('enterLobbyId')}
                 isOpen={modalOpen}
                 handleCancelAction={() => setModalOpen(false)}
                 handleConfirmAction={e => joinMatch(e)}
