@@ -4,6 +4,7 @@
 
 @import './colors.css';
 @import './shadcn.css';
+@import './animations.css';
 
 *,
 *::before,
@@ -84,5 +85,25 @@ a.active > svg {
 
     .file-selector {
         @apply m-auto w-[80%] cursor-pointer bg-secondary-brown px-2 py-3 text-center font-bold uppercase;
+    }
+
+    .collapsible-table-row {
+        overflow: hidden;
+        padding: 1rem;
+    }
+
+    .collapsible-table-row[data-state='open'] {
+        animation: slideDown 300ms ease-out;
+    }
+    .collapsible-table-row[data-state='closed'] {
+        animation: slideUp 300ms ease-out;
+    }
+
+    .collapsible-table-trigger svg {
+        @apply transform-gpu transition-all duration-300;
+    }
+
+    .collapsible-table-trigger[data-state='open'] svg {
+        @apply rotate-x-axis;
     }
 }
