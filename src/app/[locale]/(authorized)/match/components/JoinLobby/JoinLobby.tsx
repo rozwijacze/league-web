@@ -14,11 +14,10 @@ export default function JoinLobby() {
     }
 
     return (
-        <div className="image-button relative">
-            <div className="hero-background"></div>
+        <div className="match-card relative">
             <button
                 onClick={() => setModalOpen(true)}
-                className="bg-[url('/images/dart-join.jpg')] hero-image-for-button"
+                className="bg-[url('/images/dart-join.jpg')] match-card-button"
             >
                 {t('joinLobby')}
             </button>

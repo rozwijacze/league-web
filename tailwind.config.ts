@@ -18,6 +18,8 @@ const config: Config = {
         },
         extend: {
             colors: {
+                'icon-active': '#ad5389',
+                'primary-white': '#fff',
                 'primary-purple': '#9f2042',
                 'primary-red': '#7b0d1e',
                 'secondary-brown': '#3d1308',
@@ -67,6 +69,26 @@ const config: Config = {
                 sm: 'calc(var(--radius) - 4px)'
             },
             keyframes: {
+                'league-info-slide-down': {
+                    from: {
+                        height: '0',
+                        padding: '0 1rem'
+                    },
+                    to: {
+                        height: 'var(--radix-collapsible-content-height)',
+                        padding: '1rem'
+                    }
+                },
+                'league-info-slide-up': {
+                    from: {
+                        height: 'var(--radix-collapsible-content-height)',
+                        padding: '1rem'
+                    },
+                    to: {
+                        height: '0',
+                        padding: '0 1rem'
+                    }
+                },
                 'accordion-down': {
                     from: { height: '0' },
                     to: { height: 'var(--radix-accordion-content-height)' }
@@ -77,6 +99,8 @@ const config: Config = {
                 }
             },
             animation: {
+                'league-info-slide-down': 'league-info-slide-down 0.3s ease-out',
+                'league-info-slide-up': 'league-info-slide-up 0.3s ease-out',
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out'
             }

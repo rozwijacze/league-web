@@ -27,10 +27,10 @@ export default function SearchBar({ searchedValue, setSearchedValue }: Props) {
                 <IoIosClose
                     onClick={handleInputClear}
                     title={t('clear')}
-                    className="cursor-pointer search-icon"
+                    className="cursor-pointer leagues-page-search-icon"
                 />
             ) : (
-                <IoIosSearch className="search-icon" />
+                <IoIosSearch className="leagues-page-search-icon" />
             )}
         </div>
     );

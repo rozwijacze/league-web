@@ -59,7 +59,7 @@ export default function CreateLeagueLogoSelection({ register, errors, control }:
                 )}
             </div>
             <div className="flex flex-col">
-                <label htmlFor="logo" className="file-selector">
+                <label htmlFor="logo" className="leagues-page-logo-selector">
                     {t('selectLogo')}
                 </label>
                 <Controller

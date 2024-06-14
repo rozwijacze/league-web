@@ -4,71 +4,55 @@
 
 @import './colors.css';
 @import './shadcn.css';
-@import './animations.css';
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    height: 100%;
-    overflow-x: hidden;
-    color: var(--white);
-}
 
 body {
     background: var(--primary-gradient);
 }
+@layer base {
+    *,
+    *::before,
+    *::after {
+        @apply m-0 box-border p-0;
+    }
 
-svg {
-    display: flex;
-    color: var(--white);
-    width: 32px;
-    height: 32px;
-}
+    html,
+    body {
+        @apply h-full overflow-x-hidden text-white;
+    }
+    a.active {
+        @apply underline decoration-primary-red decoration-4 underline-offset-8;
+    }
+    a.active > svg {
+        @apply text-icon-active;
+    }
 
-a.active > svg {
-    color: var(--icon-active);
-}
-
-.rotate-x-axis {
-    transform: rotateX(3.142rad);
-}
-
-@layer components {
     input {
-        /* @apply autofill:shadow-[inset_0_0_0px_1000px_#7b0d1e]; set 'background' colour (black) */
         @apply autofill:px-2;
-        @apply autofill:text-lg; /* set font size */
+        @apply autofill:text-lg;
     }
 
     input[type='file'] {
         @apply hidden;
     }
 
-    a.active {
-        @apply underline decoration-primary-red decoration-4 underline-offset-8;
+    svg {
+        @apply flex h-8 w-8 text-white;
     }
+}
 
+@layer components {
     .main-nav-link {
         @apply flex justify-center rounded-md px-2 py-2 text-center text-xs font-medium transition-all duration-300 hover:bg-gray-600;
     }
-
-    .hero-background {
-        @apply absolute h-full w-full rounded-xl bg-black;
-    }
-
-    .hero-image-for-button {
-        @apply absolute flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-cover text-3xl font-bold opacity-100 shadow-sm transition-all duration-300 ease-out text-shadow hover:text-4xl hover:opacity-100 md:opacity-30;
-    }
-
-    .image-button {
+    .match-card {
         @apply flex h-2/6 w-full items-center justify-center md:h-2/5 md:w-2/5;
+    }
+    .match-card::after {
+        @apply absolute inset-0 -z-[1] rounded-lg bg-black bg-opacity-70;
+        content: '';
+    }
+    .match-card-button {
+        @apply absolute flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-cover text-3xl font-bold opacity-100 shadow-sm transition-all duration-300 ease-out text-shadow hover:text-4xl hover:opacity-100 md:opacity-30;
     }
 
     .leagues-page-nav-button {
@@ -76,34 +60,42 @@ a.active > svg {
     }
 
     .leagues-page-nav-button.active {
-        @apply bg-gray-800 text-[#ad5389];
+        @apply text-icon-active bg-gray-800;
     }
 
-    .search-icon {
-        @apply absolute right-3 top-3 h-[32px] w-[32px];
-    }
-
-    .file-selector {
+    .leagues-page-logo-selector {
         @apply m-auto w-[80%] cursor-pointer bg-secondary-brown px-2 py-3 text-center font-bold uppercase;
     }
 
+    .leagues-page-search-icon {
+        @apply absolute right-3 top-3 h-[32px] w-[32px];
+    }
+
     .collapsible-table-row {
-        overflow: hidden;
-        padding: 1rem;
+        @apply overflow-hidden p-4;
     }
 
     .collapsible-table-row[data-state='open'] {
-        animation: slideDown 300ms ease-out;
+        @apply animate-league-info-slide-down;
     }
     .collapsible-table-row[data-state='closed'] {
-        animation: slideUp 300ms ease-out;
+        @apply animate-league-info-slide-up;
     }
 
     .collapsible-table-trigger svg {
-        @apply transform-gpu transition-all duration-300;
+        @apply transition-rotate-x;
     }
 
     .collapsible-table-trigger[data-state='open'] svg {
-        @apply rotate-x-axis;
+        @apply rotate-x;
+    }
+}
+
+@layer utilities {
+    .transition-rotate-x {
+        @apply transform-gpu transition-all duration-300;
+    }
+    .rotate-x {
+        transform: rotateX(3.142rad);
     }
 }

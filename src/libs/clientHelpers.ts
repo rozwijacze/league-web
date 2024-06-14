@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation';
  * @param path
  * @returns {boolean}
  */
-export function IsCurrentPath(path: string) {
+export function IsCurrentPath(path: string): boolean {
     const currentPath = usePathname();
     const currentLocale = useLocale();
 
@@ -42,6 +42,6 @@ export function IsCurrentPath(path: string) {
  * @param key
  * @returns {boolean}
  */
-export function valueFoundInKey(value: string, key: string) {
+export function valueFoundInKey(value: string, key: string): boolean {
     return key.toLowerCase().includes(value.toLowerCase());
 }

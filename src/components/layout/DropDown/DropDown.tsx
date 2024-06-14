@@ -23,7 +23,7 @@ export default function DropDown({ options }: Props) {
     return (
         <>
             <button
-                className={`transition-all transform-gpu duration-300 ${isShown ? '' : 'rotate-x-axis'}`}
+                className={`transition-rotate-x ${isShown ? '' : 'rotate-x'}`}
                 type="button"
                 onClick={() => setIsShown(!isShown)}
                 ref={buttonRef}
