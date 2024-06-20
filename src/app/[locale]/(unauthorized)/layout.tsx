@@ -1,4 +1,4 @@
-import NavLink from '@/components/layout/NavLink';
+import NavLink from '@/components/common/NavLink/NavLink';
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl';
 import pick from 'lodash/pick';
 
@@ -11,7 +11,7 @@ export default function AuthLayout({ children }: Props) {
     const t = useTranslations('Home');
 
     return (
-        <main className="flex min-h-screen items-center justify-center text-white">
+        <main className="flex min-h-screen items-center justify-center">
             <div className="flex flex-col p-10 bg-[#00000030] shadow-xl">
                 <div className="mb-8 flex justify-center text-xl font-bold gap-4">
                     <NavLink href="/login">{t('login')}</NavLink>

@@ -6,7 +6,7 @@ export default function NotFoundPage() {
     return (
         <main className="h-screen w-screen flex items-center justify-center">
             <h1 className="text-xl">
-                <span className="text-white">404</span> | {t('404')}
+                <span className=" text-secondary-black font-bold">404</span> | {t('404')}
             </h1>
         </main>
     );

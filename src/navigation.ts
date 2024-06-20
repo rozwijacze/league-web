@@ -15,6 +15,10 @@ export const pathnames = {
         pl: '/rejestracja',
         en: '/register'
     },
+    '/leagues': {
+        pl: '/ligi',
+        en: '/leagues'
+    },
     '/match': {
         pl: '/mecz',
         en: '/match'

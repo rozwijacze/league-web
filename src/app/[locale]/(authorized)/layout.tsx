@@ -1,5 +1,5 @@
-import MainNavigation from '@/components/layout/MainNavigation';
-import UserProfile from '@/components/layout/UserProfile';
+import MainNavigation from '@/components/layout/MainNavigation/MainNavigation';
+import UserProfile from '@/components/layout/UserProfile/UserProfile';
 import '@/styles/global.css';
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
